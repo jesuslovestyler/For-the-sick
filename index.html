@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#edf1e9" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#17221d" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet" />
+  <title>For the Sick — He Heals</title>
+  <style>
+    :root {
+      --paper: #f5f6f1;
+      --paper-soft: #edf1e9;
+      --ink: #24302a;
+      --muted: #56645c;
+      --green: #577566;
+      --green-deep: #2f5040;
+      --line: #cdd7cf;
+      --wash: rgba(232, 238, 231, .74);
+      --gold: #a47c46;
+      color-scheme: light dark;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #111a16;
+        --paper-soft: #17221d;
+        --ink: #e8eee9;
+        --muted: #b7c3bb;
+        --green: #91af9e;
+        --green-deep: #bed5c7;
+        --line: #34483d;
+        --wash: rgba(28, 42, 34, .86);
+        --gold: #d5b27d;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Atkinson Hyperlegible", system-ui, sans-serif;
+      font-size: 18px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    .hero {
+      min-height: min(78vh, 760px);
+      display: grid;
+      align-items: end;
+      position: relative;
+      isolation: isolate;
+      background: var(--paper-soft);
+      overflow: hidden;
+    }
+    .hero img {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 52% 56%;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(180deg, rgba(20,30,25,.05) 22%, rgba(18,28,23,.76) 100%);
+    }
+    .hero-copy {
+      width: min(760px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 88px 0 64px;
+      color: #fffef8;
+      text-shadow: 0 1px 18px rgba(17, 25, 20, .32);
+    }
+    h1, h2, blockquote { font-family: "Newsreader", Georgia, serif; }
+    h1 {
+      max-width: 650px;
+      margin: 0 0 18px;
+      font-size: clamp(3rem, 8vw, 5.7rem);
+      line-height: .95;
+      font-weight: 500;
+      letter-spacing: -.045em;
+    }
+    .hero-copy p {
+      max-width: 590px;
+      margin: 0;
+      font-size: clamp(1.06rem, 2.2vw, 1.3rem);
+      line-height: 1.55;
+    }
+    .invitation {
+      background: var(--paper-soft);
+      border-bottom: 1px solid var(--line);
+    }
+    .invitation-inner {
+      width: min(720px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+      line-height: 1.48;
+      color: var(--green-deep);
+    }
+    main { width: min(820px, calc(100% - 40px)); margin: 0 auto; }
+    .scriptures { padding: 62px 0 20px; }
+    .passage {
+      display: grid;
+      grid-template-columns: 116px 1fr;
+      gap: 26px;
+      padding: 34px 0 42px;
+      border-bottom: 1px solid var(--line);
+    }
+    .number {
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 1.05rem;
+      color: var(--gold);
+      letter-spacing: .03em;
+      padding-top: 9px;
+    }
+    .passage h2 {
+      margin: 0 0 15px;
+      color: var(--green-deep);
+      font-weight: 500;
+      font-size: clamp(1.35rem, 3vw, 1.65rem);
+      line-height: 1.2;
+    }
+    blockquote {
+      margin: 0;
+      font-size: clamp(1.5rem, 3.8vw, 2.05rem);
+      line-height: 1.42;
+      letter-spacing: -.015em;
+    }
+    blockquote strong { color: var(--green-deep); font-weight: 500; }
+    .closing {
+      margin: 70px 0 80px;
+      padding: 54px clamp(24px, 7vw, 64px);
+      background: var(--wash);
+      border-radius: 4px 34px 4px 34px;
+      text-align: center;
+    }
+    .closing p:first-child {
+      margin: 0 auto 18px;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: clamp(1.55rem, 4vw, 2.15rem);
+      line-height: 1.35;
+      color: var(--green-deep);
+    }
+    .closing p:last-child { margin: 0 auto; max-width: 570px; color: var(--muted); }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 25px 20px calc(25px + env(safe-area-inset-bottom));
+      color: var(--muted);
+      text-align: center;
+      font-size: .88rem;
+    }
+    @media (max-width: 620px) {
+      .hero { min-height: 72svh; }
+      .hero-copy { padding-bottom: 46px; }
+      .invitation-inner { padding: 42px 0; }
+      .scriptures { padding-top: 35px; }
+      .passage { display: block; padding: 28px 0 34px; }
+      .number { padding: 0; margin-bottom: 9px; font-size: .92rem; }
+      .closing { margin: 48px 0 58px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <img src="assets/media-generation-morning-light-0-200942d8-59fc-4b0e-b311-943ecf43bbfa.webp" alt="Morning sunlight streaming through a quiet sickroom window onto a neatly made bed" />
+    <div class="hero-copy">
+      <h1>For the sick</h1>
+      <p>Words of healing, grace, and hope for everyone in a hospital bed or a quiet room tonight.</p>
+    </div>
+  </header>
+
+  <section class="invitation" aria-label="A word for tonight">
+    <div class="invitation-inner">You may read slowly. Rest between the words. The Lord is near to you in weakness, and his grace has not left the room.</div>
+  </section>
+
+  <main>
+    <section class="scriptures" aria-label="Scriptures for the sick">
+      <article class="passage">
+        <div class="number">Isaiah 53:5</div>
+        <div><h2>By his wounds we are healed</h2><blockquote>“But he was pierced for our transgressions. He was crushed for our iniquities. The punishment that brought our peace was on him; and <strong>by his wounds we are healed.</strong>”</blockquote></div>
+      </article>
+
+      <article class="passage">
+        <div class="number">Psalm 147:3</div>
+        <div><h2>He binds up their wounds</h2><blockquote>“He heals the broken in heart, and binds up their wounds.”</blockquote></div>
+      </article>
+
+      <article class="passage">
+        <div class="number">Exodus 15:26</div>
+        <div><h2>I am Yahweh who heals you</h2><blockquote>“He said, ‘If you will diligently listen to Yahweh your God’s voice, and will do that which is right in his eyes, and will pay attention to his commandments, and keep all his statutes, I will put none of the diseases on you which I have put on the Egyptians; for <strong>I am Yahweh who heals you.</strong>’”</blockquote></div>
+      </article>
+
+      <article class="passage">
+        <div class="number">Psalm 107:20</div>
+        <div><h2>He sent his word</h2><blockquote>“He sends his word, and heals them, and delivers them from their graves.”</blockquote></div>
+      </article>
+
+      <article class="passage">
+        <div class="number">Matthew 8:16–17</div>
+        <div><h2>Jesus healed all who were sick</h2><blockquote>“When evening came, they brought to him many possessed with demons. He cast out the spirits with a word, and <strong>healed all who were sick</strong>, that it might be fulfilled which was spoken through Isaiah the prophet, saying, ‘He took our infirmities, and bore our diseases.’”</blockquote></div>
+      </article>
+
+      <article class="passage">
+        <div class="number">2 Corinthians 12:9</div>
+        <div><h2>My grace is sufficient for you</h2><blockquote>“He has said to me, ‘<strong>My grace is sufficient for you, for my power is made perfect in weakness.</strong>’ Most gladly therefore I will rather glory in my weaknesses, that the power of Christ may rest on me.”</blockquote></div>
+      </article>
+
+      <article class="passage">
+        <div class="number">James 5:15–16</div>
+        <div><h2>The prayer of faith</h2><blockquote>“The prayer of faith will save him who is sick, and the Lord will raise him up. If he has committed sins, he will be forgiven. Confess your offenses to one another, and pray for one another, that you may be healed. The insistent prayer of a righteous person is powerfully effective.”</blockquote></div>
+      </article>
+
+      <article class="passage">
+        <div class="number">Psalm 30:5</div>
+        <div><h2>Joy comes in the morning</h2><blockquote>“For his anger is but for a moment. His favor is for a lifetime. Weeping may stay for the night, but <strong>joy comes in the morning.</strong>”</blockquote></div>
+      </article>
+    </section>
+
+    <section class="closing" aria-label="Closing encouragement">
+      <p>The night is not forever.</p>
+      <p>Whether healing comes suddenly, slowly, or beyond what we can yet see, you are held by Jesus. His strength is present even here, and morning belongs to him.</p>
+    </section>
+  </main>
+
+  <footer>Scripture quotations are from the World English Bible, a public-domain translation.</footer>
+</body>
+</html>
