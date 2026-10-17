@@ -38,6 +38,23 @@
       }
     }
     * { box-sizing: border-box; }
+    .home-pill {
+      position: fixed;
+      top: 14px;
+      left: 14px;
+      z-index: 10;
+      padding: 7px 15px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--wash);
+      color: var(--green-deep);
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration: none;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    .home-pill:hover { border-color: var(--green); }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
@@ -173,6 +190,7 @@
   </style>
 </head>
 <body>
+  <a class="home-pill" href="https://jesuslovestyler.com/">⌂ Home</a>
   <header class="hero">
     <img src="assets/media-generation-morning-light-0-200942d8-59fc-4b0e-b311-943ecf43bbfa.webp" alt="Morning sunlight streaming through a quiet sickroom window onto a neatly made bed" />
     <div class="hero-copy">
@@ -235,5 +253,6 @@
   </main>
 
   <footer>Scripture quotations are from the World English Bible, a public-domain translation.</footer>
+  <script data-goatcounter="https://jesuslovestyler.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
