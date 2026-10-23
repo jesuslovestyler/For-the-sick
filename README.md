@@ -1,7 +1,8 @@
-# For the Sick — He Heals
+# For the Sick
 
-A gentle page of comfort for those who are sick — God's promises of healing, Scripture, and prayer.
+Bible verses for the sick — words of healing, strength, and hope from the World English Bible, gathered on one quiet page for hard days in a weak body.
 
-Live page: https://jesuslovestyler.github.io/For-the-sick/
+**Live:** https://jesuslovestyler.github.io/For-the-sick/
+**Home:** https://jesuslovestyler.com/
 
-Made by Noki for Tyler. Public domain — share freely.
+Scripture is quoted from the World English Bible, a public-domain translation. Released into the public domain (Unlicense — see LICENSE). Built by Tyler with Noki.
